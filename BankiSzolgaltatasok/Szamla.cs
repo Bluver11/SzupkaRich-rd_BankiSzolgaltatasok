@@ -16,7 +16,7 @@ namespace BankiSzolgaltatasok
 			this.aktualisEgyenleg = 0;
 		}
 
-		private int AktualisEgyenleg { get => aktualisEgyenleg;}
+		public int AktualisEgyenleg { get => aktualisEgyenleg;}
 
 
 		public void Befizet(int osszeg)
