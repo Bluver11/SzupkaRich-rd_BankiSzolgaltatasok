@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BankiSzolgaltatasok
 {
-	public abstract class Szamla : BankiSzolgaltatas
+    public abstract class Szamla : BankiSzolgaltatas
 	{
 
 		protected int aktualisEgyenleg;
 
-		public Szamla(Tulajdonos tulajdonos,int aktualisEgyenleg):base(tulajdonos)
+        public Szamla(Tulajdonos tulajdonos) : base(tulajdonos)
 		{
 			this.aktualisEgyenleg = 0;
 		}
@@ -25,5 +25,10 @@ namespace BankiSzolgaltatasok
 		}
 
 		public abstract bool Kivesz(int osszeg);
-	}
+        public Kartya UjKartya(string kartyaSzam)
+        {
+            return new Kartya(this.Tulajdonos,kartyaSzam,this);
+        }
+    }
+}
 }

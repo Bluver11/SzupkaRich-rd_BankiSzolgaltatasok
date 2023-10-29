@@ -19,7 +19,12 @@ namespace BankiSzolgaltatasok
 
 		public override bool Kivesz(int osszeg)
 		{
-			throw new NotImplementedException();
+			if (this.aktualisEgyenleg+hitelKeret>=osszeg) 
+			{
+				aktualisEgyenleg -= osszeg;
+				return true;
+			}
+			return false;
 		}
 	}
 }
